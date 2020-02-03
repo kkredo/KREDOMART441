@@ -1,0 +1,105 @@
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="MART441 HW3">
+  <meta name="author" content="Kyle Kredo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <title>Adventure Time</title>
+  <style>body{background-color: #808000;}</style>
+</head>
+
+    <script>
+        function getChoice1()
+        {
+            var myChoice = document.getElementById("choice").value;
+            var myQuestion = document.getElementById("question");
+            if(myChoice === "Left")
+            {
+                document.getElementById("choice").style.display="none";
+                document.getElementById("btnSubmit").style.display="none";
+
+                document.getElementById("choice2").style.display="block";
+                document.getElementById("btnSubmit2").style.display="block";
+
+
+                myQuestion.innerHTML = "You have chosen left. You've come across a bear. Do you run or continue?";
+            }
+            else if(myChoice === "Right")
+            {
+                myQuestion.innerHTML = "You chose right. You come across a lake. Do you camp here? ";
+
+            }
+            else
+            {
+                myQuestion.innerHTML = "Invalid answer";
+            }
+
+        }
+        function getChoice2()
+        {
+            var bear = document.getElementById("choice2").value;
+            var myQuestion = document.getElementById("question");
+            if(bear === "Run")
+            {
+                document.getElementById("mainImage").src = "bear.png"
+
+                myQuestion.innerHTML = "Good luck with that! Do you leave your friends?";
+            }
+            else if(bear === "Continue")
+            {
+                myQuestion.innerHTML = "I hope you have bear spray.";
+
+            }
+        }
+
+        function getChoice3()
+        {
+            var camp = document.getElementById("choice3").value;
+            var myQuestion = document.getElementById("question");
+            if(camp === "Camp")
+            {
+                document.getElementById("mainImage").src = "lake.png"
+                myQuestion.innerHTML = "Sounds good!";
+            }
+            else if(camp === "Continue")
+            {
+                myQuestion.innerHTML = "Keep walking.";
+            }
+        }
+
+    </script>
+    <body>
+<div class="site-brand">
+        <h1>ADVENTURE TIME</h1>
+
+        <img src="./images/hike.png"<br>
+    <div id="question">
+    <br>
+      <div class="words">
+        You're on a hike with your buddies in the woods and not exactly sure where you all are going.
+        <br><br>
+        You come across a fork in the trail. Eager to explore you must chose to go left or right.
+        <br><br>
+        Do you go Left or do you go Right?
+    </div>
+</div>
+
+        <br>
+        <input type="text" size="40" id="choice" value="Enter Left or Right to continue">
+        <button id="btnSubmit" onclick="getChoice1();">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice2" value="Enter Run or Continue ." style="display:none"><br>
+        <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice3" value="Enter Camp or Continue."  style="display:none">
+        <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice4" value="Enter Leave or Stay."  style="display:none">
+        <button id="btnSubmit4" onclick="getChoice4();" style="display:none">Continue your adventure.</button>
+
+    </body>
+
+</html>

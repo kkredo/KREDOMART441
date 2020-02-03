@@ -1,0 +1,29 @@
+body {
+
+    background-color: #808000;
+
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    background-color: #26272b;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    margin-top: 0;
+    height: 4em;
+    width: 100%;
+    text-align: right;
+}
+
+
+.words {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.site-brand {
+
+   text-align: left;
+   font-size: 170%;
+   font-family: 'Alata', sans-serif;
+}
