@@ -40,42 +40,28 @@
         }
         function getChoice2()
         {
-            var bear = document.getElementById("choice2").value;
+            var myChoice = document.getElementById("choice2").value;
             var myQuestion = document.getElementById("question");
-            if(bear === "Run")
+            if(myChoice === "Run")
             {
-                document.getElementById("mainImage").src = "bear.png"
-
+             <img src="./images/bear.png"
                 myQuestion.innerHTML = "Good luck with that! Do you leave your friends?";
             }
-            else if(bear === "Continue")
+            else if(myChoice === "Continue")
             {
                 myQuestion.innerHTML = "I hope you have bear spray.";
 
             }
         }
 
-        function getChoice3()
-        {
-            var camp = document.getElementById("choice3").value;
-            var myQuestion = document.getElementById("question");
-            if(camp === "Camp")
-            {
-                document.getElementById("mainImage").src = "lake.png"
-                myQuestion.innerHTML = "Sounds good!";
-            }
-            else if(camp === "Continue")
-            {
-                myQuestion.innerHTML = "Keep walking.";
-            }
-        }
+
 
     </script>
     <body>
 <div class="site-brand">
         <h1>ADVENTURE TIME</h1>
+         <img src="tree.jpeg" id="mainImage">
 
-        <img src="./images/hike.png"<br>
     <div id="question">
     <br>
       <div class="words">
