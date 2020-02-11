@@ -12,6 +12,8 @@
 </head>
 
     <script>
+
+  //function 1
         function getChoice1()
         {
             var myChoice = document.getElementById("choice").value;
@@ -24,11 +26,16 @@
                 document.getElementById("choice2").style.display="block";
                 document.getElementById("btnSubmit2").style.display="block";
 
-
                 myQuestion.innerHTML = "You have chosen left. You've come across a bear. Do you run or continue?";
             }
             else if(myChoice === "Right")
             {
+              document.getElementById("choice").style.display="none";
+              document.getElementById("btnSubmit").style.display="none";
+
+              document.getElementById("choice3").style.display="block";
+              document.getElementById("btnSubmit3").style.display="block";
+
                 myQuestion.innerHTML = "You chose right. You come across a lake. Do you camp here? ";
 
             }
@@ -36,7 +43,7 @@
             {
                 myQuestion.innerHTML = "Invalid answer";
             }
-
+//function 2
         }
         function getChoice2()
         {
@@ -44,7 +51,7 @@
             var myQuestion = document.getElementById("question");
             if(myChoice === "Run")
             {
-             <img src="./images/bear.png"
+
                 myQuestion.innerHTML = "Good luck with that! Do you leave your friends?";
             }
             else if(myChoice === "Continue")
@@ -53,14 +60,18 @@
 
             }
         }
-
+    //function 3
+        function getChoice3()
+        {
+          var myChoice = document.getElementById("")
+        }
 
 
     </script>
     <body>
 <div class="site-brand">
         <h1>ADVENTURE TIME</h1>
-         <img src="tree.jpeg" id="mainImage">
+         <img src="hike.png" id="mainImage">
 
     <div id="question">
     <br>
@@ -89,3 +100,17 @@
     </body>
 
 </html>
+//function 4
+        fucntion getChoice4()
+        {
+          var myChoice = document.getElementById("choice4").value;
+          var myQuestion = document.getElementById("question");
+          if(myChoice === "Leave")
+          {
+            myQuestion.innerHTML = "you must not have many friends. The bear catches you."
+          }
+          else if(myChoice === "Stay")
+          {
+            myQuestion.innerHTML = "You're a real one. You and your friends out run the bear. Do you set up camp? Enter Yes or No."
+          }
+        }

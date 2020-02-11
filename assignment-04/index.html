@@ -1,33 +1,241 @@
-<html>
 
+<html>
 <head>
-    <title>Adventure Time</title>
-    
-    <script src="main.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/fonts.css">
-      <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="MART441 HW3">
+  <meta name="author" content="Kyle Kredo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <title>Adventure Time</title>
+  <style>body{background-color: #808000;}</style>
 </head>
 
-<body>
-  <body>
+    <script>
+
+//function 1
+        function getChoice1()
+        {
+            var myChoice = document.getElementById("choice").value;
+            var myQuestion = document.getElementById("question");
+            if(myChoice === "Left")
+            {
+                document.getElementById("choice").style.display="none";
+                document.getElementById("btnSubmit").style.display="none";
+
+                document.getElementById("choice2").style.display="block";
+                document.getElementById("btnSubmit2").style.display="block";
+                document.getElementById("mainImage").src="images/bear.png";
+
+                myQuestion.innerHTML = "You have chosen left. You've come across a bear. Do you run or continue?";
+            }
+            else if(myChoice === "Right")
+            {
+              document.getElementById("choice").style.display="none";
+              document.getElementById("btnSubmit").style.display="none";
+
+              document.getElementById("choice3").style.display="block";
+              document.getElementById("btnSubmit3").style.display="block";
+              document.getElementById("mainImage").src="images/lake.png";
+
+                myQuestion.innerHTML = "You chose right. You come across a lake. Do you camp here? ";
+
+            }
+            else
+            {
+                myQuestion.innerHTML = "Invalid answer";
+            }
+//function 2
+        }
+        function getChoice2() //left - bear
+        {
+            var myChoice = document.getElementById("choice2").value;
+            var myQuestion = document.getElementById("question");
+            if(myChoice === "Run")
+            {
+              document.getElementById("choice2").style.display="none";
+              document.getElementById("btnSubmit2").style.display="none";
+
+              document.getElementById("choice4").style.display="block";
+              document.getElementById("btnSubmit4").style.display="block";
+
+                myQuestion.innerHTML = "Good luck with that! Do you leave your friends? Enter Leave or Stay.";
+            }
+            else if(myChoice === "Continue")
+            {
+                document.getElementById("mainImage").src="images/bearspray.jpg";
+                document.getElementById("choice2").style.display="none";
+                document.getElementById("btnSubmit2").style.display="none";
+
+                document.getElementById("choice7").style.display="block";
+                document.getElementById("btnSubmit7").style.display="block";
+                myQuestion.innerHTML = "I hope you have bear spray. Enter Restart?";
+
+            }
+        }
+//function 3
+        function getChoice3()
+        {
+          var myChoice = document.getElementById("choice3").value;
+          var myQuestion = document.getElementById("question");
+          if(myChoice === "Camp")
+          {
+            document.getElementById("choice3").style.display="none";
+            document.getElementById("btnSubmit3").style.display="none";
+
+            document.getElementById("choice5").style.display="block";
+            document.getElementById("btnSubmit5").style.display="block";
+            myQuestion.innerHTML = "Do you start a fire or call it a night? Enter Fire or Night.";
+          }
+          else if(myChoice === "Continue")
+          {
+            document.getElementById("choice3").style.display="none";
+            document.getElementById("btnSubmit3").style.display="none";
+
+            document.getElementById("choice7").style.display="block";
+            document.getElementById("btnSubmit7").style.display="block";
+            myQuestion.innerHTML = "Better get going, it will be dark soon. Enter Restart.";
+
+          }
+        }
+        //function 4
+          function getChoice4()
+                {
+                  var myChoice = document.getElementById("choice4").value;
+                  var myQuestion = document.getElementById("question");
+                  if(myChoice === "Leave")
+                  {
+                    document.getElementById("choice4").style.display="none";
+                    document.getElementById("btnSubmit4").style.display="none";
+
+                    document.getElementById("choice7").style.display="block";
+                    document.getElementById("btnSubmit7").style.display="block";
+
+                    myQuestion.innerHTML = "You must not have many friends. The bear catches you. Enter Restart"
+                  }
+                  else if(myChoice === "Stay")
+                  {
+                    document.getElementById("choice4").style.display="none";
+                    document.getElementById("btnSubmit4").style.display="none";
+
+                    document.getElementById("choice6").style.display="block";
+                    document.getElementById("btnSubmit6").style.display="block";
+                    myQuestion.innerHTML = "You're a real one. You and your friends out run the bear. Do you set up camp? Enter Yes or No."
+                  }
+                }
+
+function getChoice6()
+{
+  var myChoice = document.getElementById("choice6").value;
+  var myQuestion = document.getElementById("question");
+  if(myChoice === "Yes")
+  {
+    document.getElementById("choice6").style.display="none";
+    document.getElementById("btnSubmit6").style.display="none";
+
+    document.getElementById("choice7").style.display="block";
+    document.getElementById("btnSubmit7").style.display="block";
+    myQuestion.innerHTML = "Sounds good!Enter Restart."
+  }
+  else if(myChoice === "No")
+  {
+    document.getElementById("choice6").style.display="none";
+    document.getElementById("btnSubmit6").style.display="none";
+
+    document.getElementById("choice7").style.display="block";
+    document.getElementById("btnSubmit7").style.display="block";
+    myQuestion.innerHTML = "Better get going, it will be dark soon. Enter Restart."
+  }
+}
+
+function getChoice5()
+{
+  var myChoice = document.getElementById("choice5").value;
+  var myQuestion = document.getElementById("question");
+  if(myChoice === "Fire")
+  {
+    document.getElementById("choice5").style.display="none";
+    document.getElementById("btnSubmit5").style.display="none";
+
+    document.getElementById("choice6").style.display="block";
+    document.getElementById("btnSubmit6").style.display="block";
+      document.getElementById("mainImage").src="images/fire.jpg";
+    myQuestion.innerHTML = "You now have to find firewood. Do you want to collect? Enter Yes or No."
+  }
+  else if(myChoice === "Night")
+  {
+    document.getElementById("choice5").style.display="none";
+    document.getElementById("btnSubmit5").style.display="none";
+
+    document.getElementById("choice7").style.display="block";
+    document.getElementById("btnSubmit7").style.display="block";
+
+    myQuestion.innerHTML = "Sleep tight. Enter Restart."
+  }
+}
+
+function getChoice7()
+{
+  var myChoice = document.getElementById("choice7").value;
+  var myQuestion = document.getElementById("question");
+  if(myChoice === "Restart")
+  {
+    document.getElementById("choice7").style.display="none";
+    document.getElementById("btnSubmit7").style.display="none";
+
+    document.getElementById("choice").style.display="block";
+    document.getElementById("btnSubmit").style.display="block";
+      document.getElementById("mainImage").src="images/hike.png";
+    myQuestion.innerHTML = "You're on a hike with your buddies in the woods and not exactly sure where you all are going. You come across a fork in the trail. Eager to explore you must chose to go left or right.Do you go Left or Right?"
+  }
+}
+
+
+
+    </script>
+    <body>
 <div class="site-brand">
-      <h1>ADVENTURE TIME</h1>
+        <h1>ADVENTURE TIME</h1>
+         <img src="images/hike.png" id="mainImage">
 
-      <img src="./images/hike.png"<br>
-  <div id="question">
-  <br>
-    <div class="words">
-      You're on a hike with your buddies in the woods and not exactly sure where you all are going.
-      <br><br>
-      You come across a fork in the trail. Eager to explore you must chose to go left or right.
-      <br><br>
-      Do you go Left or do you go Right?
-  </div>
-</div>
+    <div id="question">
     <br>
+      <div class="words">
+        You're on a hike with your buddies in the woods and not exactly sure where you all are going.
+        <br><br>
+        You come across a fork in the trail. Eager to explore you must chose to go left or right.
+        <br><br>
+        Do you go Left or do you go Right?
+    </div>
+</div>
 
-    <button id="choice1" onclick="storyFunction(1);">Yes</button>&nbsp;
-    <button id="choice2" onclick="storyFunction(2);">No</button>
-</body>
+        <br>
+        <input type="text" size="40" id="choice" value="Enter Left or Right to continue" style=display:none">
+        <button id="btnSubmit" onclick="getChoice1();">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice2" value="Enter Run or Continue ." style="display:none"><br>
+        <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice3" value="Enter Camp or Continue."  style="display:none">
+        <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice4" value="Enter Leave or Stay."  style="display:none">
+        <button id="btnSubmit4" onclick="getChoice4();" style="display:none">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice5" value="Enter Fire or Night."  style="display:none">
+        <button id="btnSubmit5" onclick="getChoice5();" style="display:none">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice6" value="Enter Yes or No."  style="display:none">
+        <button id="btnSubmit6" onclick="getChoice6();" style="display:none">Continue your adventure.</button>
+
+        <input type="text" size="40" id="choice7" value="Enter Restart."  style="display:none">
+        <button id="btnSubmit7" onclick="getChoice7();" style="display:none">Restart.</button>
+
+
+
+
+
+
+    </body>
 
 </html>
