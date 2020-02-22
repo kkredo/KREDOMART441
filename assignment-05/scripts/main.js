@@ -1,10 +1,13 @@
 // having a hard time grasping this stuff, using example code heavily to help understand
 
-var imageTags = ["image1", "image2", "image3", "image4"];
+var imageTags = ["image1", "image2", "image3", "image4", "image5", "image6", "image7",];
+var images = ["dog.jpg", "tiger.jpg", "gofish.jpg", "gofish.jpg", "lion.jpg", "trout.jpg", "horse.jpg"];
+/*
 imageTags[0] = dog.jpg;
 imageTags[1] = tiger.jpg;
 imageTags[2] = gofish.jpg;
 imageTags[3] = gofish.jpg;
+*/
 //maybe I should make the dog.jpg, tiger.... within the array?
 
 // create a variable with the blank image name
@@ -21,11 +24,7 @@ function printBlanks()
     for(var i = 0; i < imageTags.length; i++)
     {
     // iterate through the image tag ids and sets the source
-        document.getElementById(imageTags[0]).src= blankImagePath;
-        document.getElementById(imageTags[1]).src= blankImagePath;
-        document.getElementById(imageTags[2]).src= blankImagePath;
-        document.getElementById(imageTags[3]).src= blankImagePath;
-
+        document.getElementById(imageTags[i]).src= blankImagePath;
 
     }
 
@@ -36,11 +35,11 @@ function printBlanks()
 function createRandomImageArray()
 {
     // create an array of actual images
-    var actualImagePath = ["images/dog.jpg", "images/tiger.jpg"];
+    var actualImagePath = ["images/dog.jpg", "images/tiger.jpg", "images/lion.jpg", "images/trout.jpg", "images/horse.jpg"];
     // create another array to make sure the images only get added twice
-    var count = [0,0];
+    var count = [0,0,0,0,0];
     // create a while statement to check to see if our actual image array is full
-    while(actualImages.length < 4)
+    while(actualImages.length < 10)
     {
         // get a random number between 0 and the number total number of images that we can choose from
         var randomNumber = Math.floor(Math.random() * actualImagePath.length)
@@ -65,14 +64,8 @@ function createRandomImageArray()
 function flipImage(number)
 {
 
-    document.getElementById(imageTags[0]).src= actualImages[0];
+    document.getElementById(imageTags[number]).src= actualImages[number];
         // this should be a quick function that just changes
         // the image based on what number was pressed
-    document.getElementById(imageTags[1]).src= actualImages[1];
-
-    document.getElementById(imageTags[2]).src= actualImages[2];
-
-    document.getElementById(imageTags[3]).src= actualImages[3];
-
 
 }
