@@ -106,7 +106,7 @@ function addToPlayer()
     player.lastname = lastName;
     player.age = age;
     localStorage.setItem("playerInfo", JSON.stringify(player));
-    window.location = "index.html";
+    window.location = "game.html";
 }
 
 // get the information out of JSON
