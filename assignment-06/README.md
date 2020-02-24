@@ -1,0 +1,4 @@
+# Assignment 06
+## Kyle Kredo
+
+This assignment was a little tricky, but not too bad. I had to make sure the code from last week worked properly. I struggled most with the flip image function and all of those if then else statements. Although I heavily used the example code, I had a hard time following that process and understanding how each of those actions led to the next. The next struggle which ended up not being as bad as I thought was the imagesDisappear function. My console log was printing a type error when I would click on the images. Michael explained that with the set timeout I have to let that run for the function to reset and then be called again. Good to know and great to learn. Glad that it was a simple fix. I adjusted the setTimeout to 700 to make it a bit faster and the game runs pretty smooth!
