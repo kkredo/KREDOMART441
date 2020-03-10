@@ -1,0 +1,4 @@
+# Assignment 08
+## Kyle Kredo
+
+Another rough one. I am learning a bit each week , but there is still alot to wrap my head around. Meeting with Michael helped as always and really opened my eyes to how little I know about the material. I took his advice to go through my code and comment on each line about what is happening. That really helped break it down. I still am unsure about certain things like specific snytak but overall I am getting a better understanding of how things relate. I am excited to continue this practice in the coming weeks. The only thing that I really could not get was the random images. I have struggled with these, I found some code online that worked in the example but on my code it did not work. I think I needed to call it or maybe create an array for the images or somehow get them to come from the class. 
