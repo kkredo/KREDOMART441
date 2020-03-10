@@ -1,0 +1,40 @@
+#square1 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: absolute;
+  left: 0;
+  top: 620;
+}
+
+#square2 {
+  width: 30px;
+  height: 30px;
+  background: green;
+  position: absolute;
+  left: 400;
+  top: 600;
+}
+
+#square3 {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  position: absolute;
+  left: 900;
+  top: 600;
+}
+
+#rectangle {
+  width: 200px;
+  height: 100px;
+  background: black;
+  position: absolute;
+  left: 800;
+  top 500;
+}
+
+
+body{
+    background-color: yellow;
+}
