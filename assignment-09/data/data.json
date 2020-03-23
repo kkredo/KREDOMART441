@@ -1,0 +1,21 @@
+
+{
+    "manufacturer" : "WARBAITS",
+    "model" : "SlayerHead",
+    "colors" : [
+        "Dark Dayz",
+        "Burnt",
+        "Firecracker",
+        "DCP"
+    ],
+
+    "sizes" : [
+        "1/4 oz",
+        "3/8 oz",
+        "1/2 oz",
+        "3/4 oz",
+        "1 oz",
+        "1 1/2 oz",
+        "2 oz"
+    ]
+}
