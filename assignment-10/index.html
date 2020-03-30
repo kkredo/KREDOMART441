@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <style> body{background-color: gainsboro; height:400px;font-size:20px}</style>
+</head>
+
+<body>
+<canvas id="myCanvas" height="600" width="600" style="border: 10px solid #000000;"></canvas> <br><br>
+<p>CAAMP - On & On & On</p>
+<audio id="song" src="./music/On & On & On.mp3" controls="controls"></audio>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var x = 50;
+    var y = 50;
+    var x2 = 300;
+    var y2 = 300;
+    ctx.fillStyle = "#fd6a02";
+    drawSquare();
+
+
+
+
+
+    function drawSquare()
+    {
+        ctx.clearRect(0,0,600,600);
+        ctx.fillRect(x, y, 50, 50);
+        x=x+7;
+
+        ctx.fillRect(x2,y2,100,100);
+
+    }
+
+
+    function getKey(event)
+{
+    var char = event.which || event.keyCode;
+    var actualLetter = String.fromCharCode(char);
+    if(actualLetter == "w")
+    {
+        moveUp();
+    }
+    drawSquare();
+}
+
+function moveUp()
+{
+    y=y-10;
+}
+
+  function getKey(event)
+{
+  var char = event.which || event.keyCode;
+  var actualLetter = String.fromCharCode(char);
+  if(actualLetter == "s")
+  function moveDown()
+  {
+    moveDown();
+  }
+  drawSquare();
+}
+
+function moveDown()
+
+{
+  y=y+10;
+}
+function getKey(event)
+{
+var char = event.which || event.keyCode;
+var actualLetter = String.fromCharCode(char);
+if(actualLetter == "a")
+function moveLeft()
+  {
+    moveLeft();
+  }
+  drawSquare();
+
+function moveLeft()
+
+{
+  x=x-10;
+}
+function getKey(event)
+{
+var char = event.which || event.keyCode;
+var actualLetter = String.fromCharCode(char);
+if(actualLetter == "d")
+function moveRight()
+  {
+  moveRight();
+  }
+  drawSquare();
+
+function moveRight()
+
+{
+  x=x+10;
+}
+
+}
+}
+
+</script>
+</body>
+
+</html>
