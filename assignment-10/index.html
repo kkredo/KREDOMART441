@@ -9,6 +9,7 @@
 
 <body>
 <canvas id="myCanvas" height="600" width="600" style="border: 10px solid #000000;"></canvas> <br><br>
+
 <p>CAAMP - On & On & On</p>
 <audio id="song" src="./music/On & On & On.mp3" controls="controls"></audio>
 <script>
@@ -18,28 +19,28 @@
     var y = 50;
     var x2 = 300;
     var y2 = 300;
-    ctx.fillStyle = "#fd6a02";
+    ctx.fillStyle = "#fd6a02"; //color of the sqaures
     drawSquare();
 
 
 
 
 
-    function drawSquare()
+    function drawSquare() //function for the square
     {
-        ctx.clearRect(0,0,600,600);
-        ctx.fillRect(x, y, 50, 50);
-        x=x+7;
+        ctx.clearRect(0,0,600,600); //clears all on canvas
+        ctx.fillRect(x, y, 50, 50); //size of the square
+        x=x+7; //sets speed in which sqaure moves
 
-        ctx.fillRect(x2,y2,100,100);
-
+        ctx.fillRect(x2,y2,100,100); //size of square2
+        x2=x2+5; //sets speed in which square 2 moves
     }
 
 
-    function getKey(event)
+    function getKey(event) //event for moving sqaures via WASD
 {
     var char = event.which || event.keyCode;
-    var actualLetter = String.fromCharCode(char);
+    var actualLetter = String.fromCharCode(char); //calling string from JavaScript
     if(actualLetter == "w")
     {
         moveUp();
@@ -99,12 +100,23 @@ function moveRight()
 function moveRight()
 
 {
-  x=x+10;
-}
+  x=x+10; //maybe I need another function or class for all of these functions
+}         // or something that says like "square1 move +10 after the event function"
 
-}
-}
 
+function hasCollided(object1, object2) {
+    return !(
+        ((object1.y + object1.height) < (object2.y)) ||
+        (object1.y > (object2.y + object2.height)) ||
+        ((object1.x + object1.width) < object2.x) ||
+        (object1.x > (object2.x + object2.width))
+    );
+}
+}
+}
+//need to create objects from the squares, with classes?
+//why won't WASD work...do I need to put the event listeners into something else?
+//will revisit this week
 </script>
 </body>
 
