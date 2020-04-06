@@ -169,11 +169,18 @@ function drawRectangle()
 
 }
 
-function hasCollided(object1, object2) {
+function hasCollided(object1, object2, object3, object4) {
     return !(
         ((object1.y + object1.height) < (object2.y)) ||
         (object1.y > (object2.y + object2.height)) ||
         ((object1.x + object1.width) < object2.x) ||
         (object1.x > (object2.x + object2.width))
+
+      /*  ((object3.y + object3.height) < (object4.y)) ||
+        (object3.y > (object4.y + object4.height)) ||
+        ((object3.x + object3.width) < object4.x) ||
+        (object3.x > (object4.x + object4.width))
+        tried to add more collision but it would make everything bug out, not sure what to do
+        */
     );
 }
