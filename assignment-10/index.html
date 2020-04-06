@@ -1,123 +1,99 @@
-<!DOCTYPE html>
+w<!DOCTYPE html>
 <html>
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="scripts/main.js"></script>
-    <style> body{background-color: gainsboro; height:400px;font-size:20px}</style>
+    <!--  <script src="scripts/main.js"></script>-->
+    <style>
+        body {
+            background-color: gainsboro;
+            height: 400px;
+            font-size: 20px
+        }
+    </style>
 </head>
 
 <body>
-<canvas id="myCanvas" height="600" width="600" style="border: 10px solid #000000;"></canvas> <br><br>
+    <canvas id="myCanvas" height="600" width="600" style="border: 10px solid #000000;"></canvas> <br><br>
+    <p>CAAMP - On & On & On</p>
+    <audio id="song" src="./music/On & On & On.mp3" controls="controls"></audio>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var x = 50;
+        var y = 50;
+        var x2 = 300;
+        var y2 = 300;
+        ctx.fillStyle = "#fd6a02";
 
-<p>CAAMP - On & On & On</p>
-<audio id="song" src="./music/On & On & On.mp3" controls="controls"></audio>
-<script>
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    var x = 50;
-    var y = 50;
-    var x2 = 300;
-    var y2 = 300;
-    ctx.fillStyle = "#fd6a02"; //color of the sqaures
-    drawSquare();
+        // need something to call your draw square over and over at the correct frames per sec
+        setInterval(update, 1000 / 60);
 
+        // function called by the setInterval
+        function update() {
+            drawSquare();
+        }
 
+        // this places the square on the canvas
+        function drawSquare() {
+            ctx.clearRect(0, 0, 600, 600);
+            ctx.fillRect(x, y, 50, 50);
+            // x = x + 7;
 
+            ctx.fillRect(x2, y2, 100, 100);
 
+        }
 
-    function drawSquare() //function for the square
-    {
-        ctx.clearRect(0,0,600,600); //clears all on canvas
-        ctx.fillRect(x, y, 50, 50); //size of the square
-        x=x+7; //sets speed in which sqaure moves
+        // reacts to the key event
+        $(document).ready(function() {
+            $(this).keypress(function(event) {
+                getKey(event);
+            });
+        });
 
-        ctx.fillRect(x2,y2,100,100); //size of square2
-        x2=x2+5; //sets speed in which square 2 moves
-    }
+        // these all the movement functions (can't be inside of another function)
+        function moveUp() {
+            y = y - 10;
+        }
 
+        function moveDown()
 
-    function getKey(event) //event for moving sqaures via WASD
-{
-    var char = event.which || event.keyCode;
-    var actualLetter = String.fromCharCode(char); //calling string from JavaScript
-    if(actualLetter == "w")
-    {
-        moveUp();
-    }
-    drawSquare();
-}
+        {
+            y = y + 10;
+        }
 
-function moveUp()
-{
-    y=y-10;
-}
+        function moveLeft()
 
-  function getKey(event)
-{
-  var char = event.which || event.keyCode;
-  var actualLetter = String.fromCharCode(char);
-  if(actualLetter == "s")
-  function moveDown()
-  {
-    moveDown();
-  }
-  drawSquare();
-}
+        {
+            x = x - 10;
+        }
 
-function moveDown()
+        function moveRight()
 
-{
-  y=y+10;
-}
-function getKey(event)
-{
-var char = event.which || event.keyCode;
-var actualLetter = String.fromCharCode(char);
-if(actualLetter == "a")
-function moveLeft()
-  {
-    moveLeft();
-  }
-  drawSquare();
+        {
+            x = x + 10;
+        }
 
-function moveLeft()
+        // this is the event handler for the key pressed (just need one)
+        function getKey(event) {
+            var char = event.which || event.keyCode;
+            var actualLetter = String.fromCharCode(char);
+            if (actualLetter == "w") {
+                moveUp();
+            }
+            if (actualLetter == "s") {
+                moveDown();
+            }
 
-{
-  x=x-10;
-}
-function getKey(event)
-{
-var char = event.which || event.keyCode;
-var actualLetter = String.fromCharCode(char);
-if(actualLetter == "d")
-function moveRight()
-  {
-  moveRight();
-  }
-  drawSquare();
+            if (actualLetter == "a") {
+                moveLeft();
+            }
+            if (actualLetter == "d") {
+                moveRight();
+            }
 
-function moveRight()
-
-{
-  x=x+10; //maybe I need another function or class for all of these functions
-}         // or something that says like "square1 move +10 after the event function"
-
-
-function hasCollided(object1, object2) {
-    return !(
-        ((object1.y + object1.height) < (object2.y)) ||
-        (object1.y > (object2.y + object2.height)) ||
-        ((object1.x + object1.width) < object2.x) ||
-        (object1.x > (object2.x + object2.width))
-    );
-}
-}
-}
-//need to create objects from the squares, with classes?
-//why won't WASD work...do I need to put the event listeners into something else?
-//will revisit this week
-</script>
+        }
+    </script>
 </body>
 
 </html>
